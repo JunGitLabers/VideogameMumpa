@@ -1,7 +1,36 @@
-[gd_scene format=3 uid="uid://dvukdd5b2w7q1"]
+[gd_scene load_steps=5 format=3 uid="uid://dvukdd5b2w7q1"]
+
+[ext_resource type="PackedScene" uid="uid://cadqjefvi02ht" path="res://Player.tscn" id="1_dfyci"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tgcfg"]
+
+[sub_resource type="Sky" id="Sky_6k5ld"]
+sky_material = SubResource("ProceduralSkyMaterial_tgcfg")
+
+[sub_resource type="Environment" id="Environment_35xhc"]
+background_mode = 2
+sky = SubResource("Sky_6k5ld")
+ambient_light_source = 3
 
 [node name="manin" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0923319, -0.0736669, -0.206162)
-size = Vector3(7.90918, 0.153809, 8.99274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546922, -0.0736669, -0.209794)
+use_collision = true
+size = Vector3(13, 0.153809, 15)
+
+[node name="pared 1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.501845, 1.85138, -4.37007)
+use_collision = true
+size = Vector3(9.56104, 4.00391, 0.905518)
+
+[node name="pared 2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229662, 1.88806, 3.43755)
+use_collision = true
+size = Vector3(9.56104, 4.07727, 0.905518)
+
+[node name="Player" parent="." instance=ExtResource("1_dfyci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.930418, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_35xhc")

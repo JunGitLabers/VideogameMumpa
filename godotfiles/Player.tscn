@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cadqjefvi02ht"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+radius = 0.396075
+height = 3.00619
+
+[node name="Player" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70537, 0)
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="camera pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="camera pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43654, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="camera pivot/Camera3D"]
+transform = Transform3D(-0.990512, 0, -0.137427, -0.137392, 0.0225826, 0.990259, 0.00310346, 0.999745, -0.0223683, -0.0687785, -0.0161011, -0.416648)
