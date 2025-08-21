@@ -1,4 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cadqjefvi02ht"]
+[gd_scene load_steps=4 format=3 uid="uid://cadqjefvi02ht"]
+
+[ext_resource type="Script" uid="uid://b0ayeqdfbcqc6" path="res://collision_shape_3d.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://bs0erhu84e8bw" path="res://camera_pivot.gd" id="1_xhfnw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 radius = 0.396075
@@ -9,11 +12,13 @@ height = 3.00619
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.70537, 0)
 shape = SubResource("CapsuleShape3D_0rwas")
+script = ExtResource("1_kpjcp")
 
-[node name="camera pivot" type="Node3D" parent="."]
+[node name="CameraPivot" type="Node3D" parent="."]
+script = ExtResource("1_xhfnw")
 
-[node name="Camera3D" type="Camera3D" parent="camera pivot"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.43654, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="camera pivot/Camera3D"]
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(-0.990512, 0, -0.137427, -0.137392, 0.0225826, 0.990259, 0.00310346, 0.999745, -0.0223683, -0.0687785, -0.0161011, -0.416648)
