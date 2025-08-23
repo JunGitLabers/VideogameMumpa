@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://doc2a6pficegw"]
+
+[ext_resource type="PackedScene" uid="uid://by5jjnyv847lo" path="res://Player/Player.tscn" id="1_mqy87"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vqd03"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_et7mn"]
+size = Vector2(20, 10)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_mqy87"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5fha"]
+
+[node name="Environment" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, -0.0371871, -0.007478, 0)
+shape = SubResource("WorldBoundaryShape3D_vqd03")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_et7mn")
+
+[node name="PlayerItself" parent="." instance=ExtResource("1_mqy87")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.844075, 0.386568, -0.37162, 0, 0.346516, 0.360454, 0.536225, -0.6085, 0.584971, -7.75231, 1.49797, 5.00199)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.1, 0, 0, 0, 0.28, 0, 0, 0, 2.4, 3, 0.223742, -2.34867)
+mesh = SubResource("CylinderMesh_mqy87")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.453068, 0)
+shape = SubResource("BoxShape3D_b5fha")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.1, 0, 0, 0, 0.28, 0, 0, 0, 2.4, 6.57298, 0.153047, -2.34867)
+mesh = SubResource("CylinderMesh_mqy87")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.453068, 0)
+shape = SubResource("BoxShape3D_b5fha")
