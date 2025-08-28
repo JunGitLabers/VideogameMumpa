@@ -1,19 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://by5jjnyv847lo"]
+[gd_scene load_steps=4 format=3 uid="uid://by5jjnyv847lo"]
 
 [ext_resource type="Script" uid="uid://bbgrydqi6i3cc" path="res://Player/player.gd" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://djjs54d1evxka" path="res://Player/camera_pivot.gd" id="2_q3lat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ndj"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_l2ndj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qydi"]
-albedo_color = Color(0.524081, 0.18002, 0.308789, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_q3lat"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tok1r"]
-albedo_color = Color(0.147672, 0.147672, 0.147672, 1)
 
 [node name="PlayerItself" type="CharacterBody3D"]
 script = ExtResource("1_3qydi")
@@ -22,20 +12,12 @@ script = ExtResource("1_3qydi")
 shape = SubResource("CapsuleShape3D_l2ndj")
 
 [node name="Node3D" type="Node3D" parent="."]
-
-[node name="Body" type="MeshInstance3D" parent="Node3D"]
-mesh = SubResource("CapsuleMesh_l2ndj")
-surface_material_override/0 = SubResource("StandardMaterial3D_3qydi")
-
-[node name="Head" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(0.723746, 0, 0, 0, 0.711722, 0, 0, 0, 1, -0.00336218, 1.00826, -0.381339)
-mesh = SubResource("BoxMesh_q3lat")
-surface_material_override/0 = SubResource("StandardMaterial3D_tok1r")
+visible = false
 
 [node name="CameraPivot" type="Node3D" parent="."]
 script = ExtResource("2_q3lat")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.969612, 0.244647, 0, -0.244647, 0.969612, 0, 1.95139, 2.87603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
