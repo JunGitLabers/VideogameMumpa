@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://by5jjnyv847lo"]
+[gd_scene load_steps=5 format=3 uid="uid://by5jjnyv847lo"]
 
 [ext_resource type="Script" uid="uid://bbgrydqi6i3cc" path="res://Player/player.gd" id="1_3qydi"]
 [ext_resource type="Script" uid="uid://djjs54d1evxka" path="res://Player/camera_pivot.gd" id="2_q3lat"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l2ndj"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q3lat"]
 
 [node name="PlayerItself" type="CharacterBody3D"]
 script = ExtResource("1_3qydi")
@@ -18,6 +20,9 @@ visible = false
 script = ExtResource("2_q3lat")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.605182)
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_q3lat")

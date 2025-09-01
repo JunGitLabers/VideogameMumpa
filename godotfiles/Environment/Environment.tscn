@@ -26,8 +26,8 @@ mesh = SubResource("PlaneMesh_et7mn")
 [node name="PlayerItself" parent="." instance=ExtResource("1_mqy87")]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.844075, 0.386568, -0.37162, 0, 0.346516, 0.360454, 0.536225, -0.6085, 0.584971, -7.75231, 1.49797, 5.00199)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="PlayerItself"]
+transform = Transform3D(0.844075, 0.386568, -0.371621, 0, 0.693032, 0.720907, 0.536225, -0.6085, 0.584971, -7.75231, 1.99594, 5.00199)
 shadow_enabled = true
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
