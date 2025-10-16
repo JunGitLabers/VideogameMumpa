@@ -1,6 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://doc2a6pficegw"]
+[gd_scene load_steps=10 format=3 uid="uid://doc2a6pficegw"]
 
 [ext_resource type="PackedScene" uid="uid://by5jjnyv847lo" path="res://Player/Player.tscn" id="1_mqy87"]
+[ext_resource type="PackedScene" uid="uid://dcjqm8hc6npa1" path="res://Assets/3DModels/NPCs/NPCProfe/npc_profe.tscn" id="2_b5fha"]
+[ext_resource type="PackedScene" uid="uid://enbxe1j5gwy0" path="res://Assets/3DModels/Furniture/Exhibitor_1/Exhibitor_1.glb" id="3_7pnlc"]
+[ext_resource type="PackedScene" uid="uid://caqi1dg3mfgi5" path="res://Assets/3DModels/Furniture/Exhibitor_2/Exhibitor_2.glb" id="4_mc1gl"]
+[ext_resource type="PackedScene" uid="uid://biyx7khxfr4g2" path="res://Assets/3DModels/Furniture/Exhibitor_3/Exhibitor_3.glb" id="5_kbj6e"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vqd03"]
 
@@ -24,11 +28,13 @@ shape = SubResource("WorldBoundaryShape3D_vqd03")
 mesh = SubResource("PlaneMesh_et7mn")
 
 [node name="PlayerItself" parent="." instance=ExtResource("1_mqy87")]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.35, 0, 0, 0, 0.7, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.844075, 0.386568, -0.37162, 0, 0.346516, 0.360454, 0.536225, -0.6085, 0.584971, -7.75231, 1.49797, 5.00199)
+transform = Transform3D(0.8440751, 0.38656837, -0.371621, 0, 0.34651592, 0.36045346, 0.5362251, -0.6084996, 0.5849709, -4.977989, 2.3052855, 4.160125)
 shadow_enabled = true
+shadow_bias = 0.03
+shadow_normal_bias = 3.0
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.938154, -3.5446)
@@ -41,3 +47,17 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.462554, 0.323137)
 shape = SubResource("BoxShape3D_b5fha")
+
+[node name="NPCProfe" parent="." instance=ExtResource("2_b5fha")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -0.0775456, -0.00694885, -1.86784)
+
+[node name="Exhibitor_1" parent="." instance=ExtResource("3_7pnlc")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -1.5334129, -0.0074779964, -2.665388)
+
+[node name="Exhibitor_2" parent="." instance=ExtResource("4_mc1gl")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -3.9911504, -0.0074779964, -2.3160481)
+
+[node name="Exhibitor_3" parent="." instance=ExtResource("5_kbj6e")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 2.0512173, -0.0074779964, -2.2283273)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
