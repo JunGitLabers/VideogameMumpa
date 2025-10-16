@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcjqm8hc6npa1"]
+
+[ext_resource type="PackedScene" uid="uid://cwclbij3k5u5c" path="res://Assets/3DModels/NPCs/NPCProfe/NPCProfe.glb" id="1_0nnxy"]
+[ext_resource type="Script" uid="uid://c4dc1a3hlwqt7" path="res://Assets/3DModels/NPCs/NPCProfe/animation_player.gd" id="2_eka8b"]
+[ext_resource type="Script" uid="uid://d23seljtgjvbo" path="res://Assets/3DModels/NPCs/NPCProfe/npc_profe.gd" id="2_tg41d"]
+
+[node name="NPCProfe" instance=ExtResource("1_0nnxy")]
+script = ExtResource("2_tg41d")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(0.707107, -7.30555e-08, -0.707107, -3.09086e-08)
+bones/5/position = Vector3(-6.66134e-16, 0.0274115, -2.3964e-09)
+bones/5/rotation = Quaternion(-0.707107, -2.51215e-15, 0.707107, -6.18172e-08)
+bones/6/position = Vector3(0.359847, 0.322711, -5.23585e-09)
+bones/6/rotation = Quaternion(-0.274477, -0.133714, -0.871203, 0.384432)
+bones/8/position = Vector3(-0.280658, 0.133876, -8.27513e-08)
+bones/8/rotation = Quaternion(0.986659, -0.1628, 7.17617e-08, -1.03649e-07)
+bones/10/position = Vector3(-1.52507e-09, 0.518773, 0.0274115)
+
+[node name="Foot_L" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(1.2316799, 1.9575378e-08, 8.7516105e-15, -1.9575415e-08, 1.2316797, 7.341391e-08, -8.7545937e-16, -7.341391e-08, 1.2316797, 0.12269303, 0.05259001, 0.059409358)
+
+[node name="Foot_R" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(1.2316799, 1.9575378e-08, 8.7516105e-15, -1.9575415e-08, 1.2316797, 7.341391e-08, -8.7545937e-16, -7.341391e-08, 1.2316797, -0.122693025, 0.05259001, 0.059409354)
+
+[node name="Hand_L" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.74323964, 0.5537486, 0.37544253, -0.668665, 0.59643376, 0.44401965, 0.021948729, -0.58105844, 0.8135659, 0.43472943, 0.56172997, 0.0038534177)
+
+[node name="Hand_R" parent="Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.3212566, -0.9469923, -1.8287281e-07, 0.9469921, 0.32125664, -3.1589696e-08, 8.8664336e-08, -1.6303076e-07, 1, -0.30861503, 0.3462738, -0.0031271472)
+
+[node name="Ears" parent="Armature/Skeleton3D" index="4"]
+transform = Transform3D(1, 6.3948846e-14, -5.563625e-08, -9.2370556e-14, 1, 5.960463e-08, 5.5636267e-08, -5.9604627e-08, 1, 3.3332544e-08, 0.9799108, 0.015356255)
+
+[node name="Head" parent="Armature/Skeleton3D" index="5"]
+transform = Transform3D(1, 6.3948846e-14, -5.563625e-08, -9.2370556e-14, 1, 5.960463e-08, 5.5636267e-08, -5.9604627e-08, 1, 3.6417774e-08, 1.0045356, 0.021732155)
+
+[node name="Head_001" parent="Armature/Skeleton3D" index="6"]
+transform = Transform3D(1, 6.3948846e-14, -5.563625e-08, -9.2370556e-14, 1, 5.960463e-08, 5.5636267e-08, -5.9604627e-08, 1, 3.6417774e-08, 1.0045356, 0.021732155)
+
+[node name="Plane" parent="Armature/Skeleton3D" index="7"]
+transform = Transform3D(1, 6.3948846e-14, -5.563625e-08, -9.2370556e-14, 1, 5.960463e-08, 5.5636267e-08, -5.9604627e-08, 1, 2.5053987e-08, 0.93562263, 0.18366495)
+
+[node name="Body" parent="Armature/Skeleton3D" index="8"]
+transform = Transform3D(0.9999998, 5.96047e-08, 2.2564353e-14, -5.960472e-08, 0.9999997, 8.7422734e-08, -1.8474343e-14, -8.742273e-08, 0.99999994, 1.500323e-08, 0.5360388, 0.0009499694)
+
+[node name="Cube" parent="Armature/Skeleton3D" index="9"]
+transform = Transform3D(1, 8.1712415e-14, -5.563624e-08, -1.0550678e-13, 1, 5.9604595e-08, 5.5636256e-08, -5.9604595e-08, 1, 2.5099501e-08, 0.7649497, -2.5099432e-08)
+
+[node name="WGT-Bone" parent="." index="1"]
+transform = Transform3D(0, -0.152423, 3.63405e-08, -9.08513e-09, 3.63405e-08, 0.152423, -0.152423, -2.16606e-15, -9.08513e-09, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="." index="2"]
+script = ExtResource("2_eka8b")
