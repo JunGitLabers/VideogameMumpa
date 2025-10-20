@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj4ggq5icgael"]
+
+[ext_resource type="Script" uid="uid://dhkoq4thny5n5" path="res://scripts/jugador.gd" id="1_16k11"]
+[ext_resource type="Texture2D" uid="uid://buqvlrdt7kyp8" path="res://mira.png" id="2_jpodt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_shl25"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_16k11"]
+
+[node name="jugador" type="CharacterBody3D"]
+script = ExtResource("1_16k11")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_shl25")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999999, 0.0010472, 0, -0.0010472, 0.999999, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_16k11")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.727, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(3, 0, 0, 0, -1.31134e-07, -3, 0, 3, -1.31134e-07, 0, -0.0048008, -0.337719)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -56.0
+offset_right = 169.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jpodt")
